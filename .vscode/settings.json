@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "prettier.jsxBracketSameLine": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  }
+}
