@@ -1,32 +1,70 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Game />
   </div>
 </template>
 
+<script lang="ts">
+import Vue from 'vue';
+import Game from '@/components/Game.vue';
+
+export default Vue.extend({
+  components: {
+    Game,
+  },
+});
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+body {
+  font: 14px 'Century Gothic', Futura, sans-serif;
+  margin: 20px;
 }
 
-#nav {
-  padding: 30px;
+ol,
+ul {
+  padding-left: 30px;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
 }
 </style>
